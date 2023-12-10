@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<figure class="text-center">
+<h2>Our Users:</h2>
+</figure>
+<div class="col-8 mx-auto mt-5">
+    <form method="post" enctype="multipart/form-data">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Member Since</th>
+                <th scope="col">Member From</th>
+                <th scope="col">Gender</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${users}">
+                <th scope="row" th:text="${user.id}">1</th>
+                <td th:text="${user.name}">Jacob</td>
+                <td th:text="${user.firstName}">Jacob</td>
+                <td th:text="${user.memberSince}">Jacob</td>
+                <td th:text="${user.memberFrom}">Jacob</td>
+                <td th:text="${user.gender}">Jacob</td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
